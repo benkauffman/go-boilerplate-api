@@ -1,0 +1,21 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: go-boilerplate-api
+  path: /usr/local/go/src/github.com/benkauffman/go-boilerplate-api
+  args:
+  - go-boilerplate-api
+  commands:
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor

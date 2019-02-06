@@ -1,0 +1,13 @@
+basePath: '{{.BasePath}}'
+host: '{{.Host}}'
+info:
+  contact: {}
+  description: API to demo RESTful capabilities in go
+  license:
+    name: MIT
+    url: https://github.com/benkauffman/go-boilerplate-api/blob/master/LICENSE
+  termsOfService: https://github.com/benkauffman/go-boilerplate-api
+  title: Boilerplate API
+  version: "1.0"
+paths: {}
+swagger: "2.0"

@@ -1,0 +1,17 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API to demo RESTful capabilities in go",
+        "title": "Boilerplate API",
+        "termsOfService": "https://github.com/benkauffman/go-boilerplate-api",
+        "contact": {},
+        "license": {
+            "name": "MIT",
+            "url": "https://github.com/benkauffman/go-boilerplate-api/blob/master/LICENSE"
+        },
+        "version": "1.0"
+    },
+    "host": "{{.Host}}",
+    "basePath": "{{.BasePath}}",
+    "paths": {}
+}

@@ -1,0 +1,8 @@
+.idea
+
+/go-boilerplate-api
+
+vendor/**/
+!vendor/vendor.json
+
+runtime/logs/*.log

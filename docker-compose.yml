@@ -1,0 +1,46 @@
+version: '3.7'
+
+volumes:
+  db: {}
+  rdb: {}
+
+services:
+
+  mysql:
+    #env_file: .env
+    image: mysql:5.7
+    container_name: go-boilerplate-mysql
+    ports:
+      - "3306"
+    volumes:
+      - db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Boilerplate
+      MYSQL_USER: Boilerplate
+      MYSQL_PASSWORD: 12345678
+
+  redis:
+    image: redis:3.2
+    container_name: go-boilerplate-redis
+    ports:
+      - "6379"
+    volumes:
+      - rdb:/data
+    restart: always
+    command: redis-server --requirepass password --appendonly yes
+
+  api:
+    depends_on:
+      - mysql
+      - redis
+    image: go-boilerplate-api:latest
+    container_name: go-boilerplate-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/usr/local/go/src/github.com/benkauffman/go-boilerplate-api
+    links:
+      - mysql:mysql-server
+      - redis:redis-server
